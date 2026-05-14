@@ -1,5 +1,7 @@
 package com.alpha.votezy.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,5 +27,6 @@ public class Voter {
 	private boolean hasVoted=false;
 	
 	@OneToOne(mappedBy = "voter", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Vote vote;
 }
